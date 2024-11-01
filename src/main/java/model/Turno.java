@@ -8,6 +8,6 @@ package model;
  *
  * @author leo
  */
-public enum Tipo {
-    CARRO, CAMINHAO, MOTOCICLETA, CAMINHONETE, ONIBUS;
+public enum Turno {
+    DIA, TARDE, NOITE, MADRUGADA;
 }

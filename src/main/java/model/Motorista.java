@@ -4,10 +4,34 @@
  */
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  *
  * @author leo
  */
-public class Motorista {
+@Entity
+@Table(name = "tb_motorista")
+public class Motorista extends Pessoa {
+    private Turno turno;
+    private int cabine; 
+
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        this.turno = turno;
+    }
+
+    public int getCabine() {
+        return cabine;
+    }
+
+    public void setCabine(int cabine) {
+        this.cabine = cabine;
+    }
+    
     
 }

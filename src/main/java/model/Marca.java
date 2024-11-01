@@ -8,6 +8,18 @@ package model;
  *
  * @author leo
  */
-public class Marca {
-    
+public enum Marca {
+    CHEVROLET,
+    FIAT,
+    HONDA,
+    RENAULT,
+    HYUNDAI,
+    YAMAHA,
+    FORD,
+    VOLKSWAGEN,
+    VOLVO,
+    SCANIA,
+    MERCEDESBENZ,
+    OUTRA
+    ;
 }
