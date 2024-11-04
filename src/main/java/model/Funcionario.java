@@ -4,11 +4,16 @@
  */
 package model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 /**
  *
  * @author leo
  */
-public class Funcionario {
+@Entity
+@DiscriminatorValue("FUNCIONARIO")
+public class Funcionario extends Pessoa {
     private Turno turno;
     private int cabine;
 
