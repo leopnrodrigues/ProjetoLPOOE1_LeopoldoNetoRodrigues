@@ -4,34 +4,26 @@
  */
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-
+//import javax.persistence.Table;
 /**
  *
  * @author leo
  */
 @Entity
-@Table(name = "tb_motorista")
+@DiscriminatorValue("MOTORISTA")
+//@Table(name = "tb_motorista")
 public class Motorista extends Pessoa {
-    private Turno turno;
-    private int cabine; 
+    @Column(nullable = false, length = 9)
+    private String cnh;
 
-    public Turno getTurno() {
-        return turno;
+    public String getCnh() {
+        return cnh;
     }
 
-    public void setTurno(Turno turno) {
-        this.turno = turno;
-    }
-
-    public int getCabine() {
-        return cabine;
-    }
-
-    public void setCabine(int cabine) {
-        this.cabine = cabine;
-    }
-    
-    
+    public void setCnh(String cnh) {
+        this.cnh = cnh;
+    }   
 }
