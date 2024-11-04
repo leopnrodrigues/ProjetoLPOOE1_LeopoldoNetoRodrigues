@@ -5,10 +5,14 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 /**
@@ -16,13 +20,18 @@ import javax.persistence.Table;
  * @author leo
  */
 @Entity
-@Table(name = "tb_veiculo")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo")
+@Table(name = "tb_pessoa")
 public class Pessoa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+    @Column(nullable = false, length = 11)
     private String cpf;
+    @Column(nullable = false, length = 13)
     private String telefone;
+    @Column(nullable = false, length = 30)
     private String email;
 
     public int getId() {
