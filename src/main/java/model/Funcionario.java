@@ -6,6 +6,7 @@ package model;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+//import javax.persistence.OneToMany;
 
 /**
  *
@@ -16,7 +17,7 @@ import javax.persistence.Entity;
 public class Funcionario extends Pessoa {
     private Turno turno;
     private int cabine;
-
+    
     public Turno getTurno() {
         return turno;
     }

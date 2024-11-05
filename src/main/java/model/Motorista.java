@@ -16,7 +16,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("MOTORISTA")
 //@Table(name = "tb_motorista")
 public class Motorista extends Pessoa {
-    @Column(nullable = false, length = 9)
+    @Column(nullable = true, length = 9)
     private String cnh;
 
     public String getCnh() {

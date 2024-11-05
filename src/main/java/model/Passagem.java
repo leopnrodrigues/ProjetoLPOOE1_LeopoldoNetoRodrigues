@@ -5,6 +5,8 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,12 +24,26 @@ public class Passagem implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-//    private DateTime
+
     private int cabine;
+    
+    private double valorPago;
+    
+    @Column(name = "data_hora", nullable = false)
+    private LocalDateTime dataHora;
+
+    @ManyToOne
+    @JoinColumn(name = "veiculo_id", nullable = false)
     private Veiculo veiculo;
+
+    @ManyToOne
+    @JoinColumn(name = "funcionario_id", nullable = false)
     private Funcionario funcionario;
+
+    @ManyToOne
+    @JoinColumn(name = "motorista_id", nullable = false)
     private Motorista motorista;
-    private double ValorPago;
+
 
     public int getId() {
         return id;
@@ -70,12 +86,19 @@ public class Passagem implements Serializable{
     }
 
     public double getValorPago() {
-        return ValorPago;
+        return valorPago;
     }
 
-    public void setValorPago(double ValorPago) {
-        this.ValorPago = ValorPago;
+    public void setValorPago(double valorPago) {
+        this.valorPago = valorPago;
     }
     
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
+    }
     
 }

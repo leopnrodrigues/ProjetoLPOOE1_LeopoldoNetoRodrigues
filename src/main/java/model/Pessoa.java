@@ -33,15 +33,24 @@ public class Pessoa implements Serializable {
     private String telefone;
     @Column(nullable = false, length = 30)
     private String email;
-
+    @Column(nullable = false, length = 30)
+    private String nome;
+    
     public int getId() {
         return id;
     }
-
+    
     public void setId(int id) {
         this.id = id;
     }
+    
+    public String getNome() {
+        return nome;
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
     public String getCpf() {
         return cpf;
     }
@@ -65,7 +74,5 @@ public class Pessoa implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
     
 }

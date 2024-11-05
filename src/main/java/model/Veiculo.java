@@ -4,10 +4,9 @@
  */
 package model;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
-//import java.util.ArrayList;
-//import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -15,8 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-//import javax.persistence.ManyToOne;
-//import javax.persistence.OneToOne;
 import javax.persistence.Table;
 /**
  *
@@ -26,17 +23,27 @@ import javax.persistence.Table;
 @Table(name = "tb_veiculo")
 public class Veiculo implements Serializable {
 
-    @OneToMany(mappedBy = "veiculo")
-    private List<Passagem> passagem_veiculo;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+
     @Column(nullable = false, length = 7)
     private String placa;
+
     @Enumerated(EnumType.STRING)
-    private Tipo tipo; 
+    private Tipo tipo;
+
     @Column(nullable = false, length = 10)
     private String cor;
+    
+    @Enumerated(EnumType.STRING)
+    private Marca marca;
+    
+    @Column(nullable = false, length = 50)
+    private String descricao;
+    
+    @OneToMany(mappedBy = "veiculo")
+    private List<Passagem> passagemVeiculo = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -69,7 +76,28 @@ public class Veiculo implements Serializable {
     public void setCor(String cor) {
         this.cor = cor;
     }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+    
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
     
     
+     public void addPassagem(Passagem passagem) {
+        passagemVeiculo.add(passagem);
+        passagem.setVeiculo(this);
+    }
+
     
 }
