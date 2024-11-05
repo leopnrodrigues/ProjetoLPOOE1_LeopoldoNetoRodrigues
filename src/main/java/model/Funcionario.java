@@ -15,6 +15,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("FUNCIONARIO")
 public class Funcionario extends Pessoa {
+    @Enumerated(EnumType.STRING)
     private Turno turno;
     private int cabine;
     
