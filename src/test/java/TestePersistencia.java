@@ -143,7 +143,7 @@ public class TestePersistencia {
             f3.setTurno(Turno.MADRUGADA);
 
             Passagem p4 = new Passagem();
-            p4.setCabine(1);
+            p4.setCabine(3);
             p4.setValorPago(6.50);
             p4.setVeiculo(v1);
             v1.addPassagem(p4);
