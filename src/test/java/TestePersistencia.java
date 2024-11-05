@@ -82,6 +82,7 @@ public class TestePersistencia {
             p1.setCabine(1);
             p1.setValorPago(5.50);
             p1.setVeiculo(v1);
+            v1.addPassagem(p1);
             p1.setMotorista(m1);
             p1.setFuncionario(f1);
             p1.setDataHora(LocalDateTime.now()); // Passagem 1
@@ -90,6 +91,7 @@ public class TestePersistencia {
             p2.setCabine(1);
             p2.setValorPago(7.00);
             p2.setVeiculo(v2);
+            v2.addPassagem(p2);
             p2.setMotorista(m1);
             p2.setFuncionario(f1);
             p2.setDataHora(LocalDateTime.now().plusHours(2)); // Passagem 2
@@ -120,6 +122,7 @@ public class TestePersistencia {
             p3.setCabine(2);
             p3.setValorPago(10.00);
             p3.setVeiculo(v3);
+            v3.addPassagem(p3);
             p3.setMotorista(m2);
             p3.setFuncionario(f2);
             p3.setDataHora(LocalDateTime.now().plusHours(4)); // Passagem 3
@@ -143,6 +146,7 @@ public class TestePersistencia {
             p4.setCabine(1);
             p4.setValorPago(6.50);
             p4.setVeiculo(v1);
+            v1.addPassagem(p4);
             p4.setMotorista(m3);
             p4.setFuncionario(f3);
             p4.setDataHora(LocalDateTime.now().plusHours(6)); // Passagem 4
